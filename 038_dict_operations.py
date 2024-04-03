@@ -67,7 +67,13 @@ print("Function: count_words_by_length")
 # Since there are two words of length 3, etc.
 
 def count_words_by_length(words):
-  pass
+  len_count = {}
+  for word in words:
+    if len(word) not in len_count:
+      len_count[len(word)] = 1
+    else:
+      len_count[len(word)] = len_count[len(word)] + 1
+  return len_count
 
 check_that_these_are_equal(
   count_words_by_length(["hat", "cat", "I", "bird"]),
